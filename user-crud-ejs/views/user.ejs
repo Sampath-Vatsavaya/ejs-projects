@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>User Crud App</title>
+</head>
+<body>
+    <div class="main h-screen w-full bg-zinc-900 p-10 text-white">
+       
+            <a href="/" class="text-blue-500 ">back to home</a>
+     
+        <h1 class="text-3xl mt-10 tracking-tighter mb-3">All Users</h1>
+        <div class="users flex gap-3 flex-wrap">
+
+            <% if (users.length>0) {  %>
+            <%  users.forEach(function(user) { %>
+                   
+
+                <div class="user w-72 p-4 bg-zinc-800 rounded-lg">
+                     <div class="w-full h-52 rounded-lg bg-red-500 overflow-hidden">
+                        <img src="<%= user.image %>" class="w-full h-full object-cover object-top">
+                     </div>
+                    <h3 class="text-xl tracking-tighter mt-3"><%= user.name %></h3>
+                    <h5 class="text-zinc-500"><%= user.email %></h5>
+                    <div class="flex gap-3 mt-10">
+                        <a href="/update/<%= user._id %>" class="text-zinc-400">Edit User</a>
+                        <a href="/delete/<%= user._id %>" class="text-red-500">Delete User</a>
+                    </div>
+                </div>
+
+
+
+
+            <% }) %>
+            <% } else { %>
+            <div class="text-zinc-600">No Users yet</div>
+            <% } %>
+        </div>
+      
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+

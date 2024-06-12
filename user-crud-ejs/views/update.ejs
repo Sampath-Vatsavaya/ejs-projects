@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>User Crud App</title>
+</head>
+<body>
+    <div class="main h-screen w-full bg-zinc-900 p-10">
+        <div class="nav mb-10">
+            <a href="/read" class="text-blue-500 ">Read Users</a>
+        </div>
+        <div class="form text-white">
+            <h1 class="text-3xl mb-3 tracking-tighter">Edit User</h1>
+            <form action="/update/<%= user._id %>" method="post" class="">
+                <input type="text"class="px-5 py-2 bg-zinc-800 rounded-md outline-none mr-2 bg-transparent" name="name" id="name" value="<%= user.name  %>" placeholder="name..">
+                <input value="<%= user.email  %>" type="text"class="px-5 py-2 bg-zinc-800 outline-none rounded-md mr-2 bg-transparent" name="email" id="email" placeholder="mail">
+                <input value="<%= user.image  %>" type="text"class="px-5 py-2 bg-zinc-800 outline-none rounded-md  mr-2 bg-transparent" name="image" id="image" placeholder="image url">
+                <input type="submit" class="bg-yellow-500 rounded-md px-5 py-2" value="Edit User">
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
